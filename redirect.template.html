@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta http-equiv="refresh" content="5; url=@@TUNNEL_ORIGIN@@">
+    <title>Opening Chaos HQ</title>
+  </head>
+  <body>
+    <main>
+      <h1>Opening Chaos HQ</h1>
+      <p>If the page does not open, <a id="destination" href="@@TUNNEL_ORIGIN@@">open Chaos HQ directly</a>.</p>
+    </main>
+    <script>
+      (() => {
+        const origin = "@@TUNNEL_ORIGIN@@";
+        const prefix = "@@PAGES_PREFIX@@";
+        const path = location.pathname.startsWith(prefix + "/")
+          ? location.pathname.slice(prefix.length)
+          : "/";
+        const destination = origin + path + location.search + location.hash;
+        const link = document.getElementById("destination");
+        link.href = destination;
+        link.textContent = destination;
+        location.replace(destination);
+      })();
+    </script>
+  </body>
+</html>
