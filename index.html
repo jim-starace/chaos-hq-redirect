@@ -4,12 +4,27 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow, noarchive">
-    <title>Chaos HQ is starting</title>
+    <meta http-equiv="refresh" content="5; url=https://reservation-istanbul-coating-voices.trycloudflare.com">
+    <title>Opening Chaos HQ</title>
   </head>
   <body>
     <main>
-      <h1>Chaos HQ is starting</h1>
-      <p>The public link will open automatically after the tunnel starts.</p>
+      <h1>Opening Chaos HQ</h1>
+      <p>If the page does not open, <a id="destination" href="https://reservation-istanbul-coating-voices.trycloudflare.com">open Chaos HQ directly</a>.</p>
     </main>
+    <script>
+      (() => {
+        const origin = "https://reservation-istanbul-coating-voices.trycloudflare.com";
+        const prefix = "/chaos-hq-redirect";
+        const path = location.pathname.startsWith(prefix + "/")
+          ? location.pathname.slice(prefix.length)
+          : "/";
+        const destination = origin + path + location.search + location.hash;
+        const link = document.getElementById("destination");
+        link.href = destination;
+        link.textContent = destination;
+        location.replace(destination);
+      })();
+    </script>
   </body>
 </html>
